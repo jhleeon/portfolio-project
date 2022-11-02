@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\PagesController;
 use App\Http\Controllers\MainPageController;
+use App\Http\Controllers\ServicePageController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -24,6 +25,10 @@ Route::get('/admin/dashboard', [PagesController::class,'dashboard'])->name('admi
 Route::get('/admin/main', [MainPageController::class,'mainpage'])->name('admin.mainpage');
 Route::put('/admin/main', [MainPageController::class,'update'])->name('admin.mainpage.update');
 
+//Service page route
+Route::get('/admin/service/create', [ServicePageController::class,'create'])->name('admin.servicepage.create');
+Route::post('/admin/service/create', [ServicePageController::class,'store'])->name('admin.servicepage.store');
+Route::get('/admin/service/list', [ServicePageController::class,'list'])->name('admin.servicepage.list');
 
 Auth::routes();
 

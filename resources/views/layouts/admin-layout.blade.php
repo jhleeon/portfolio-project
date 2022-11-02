@@ -55,9 +55,18 @@
             </li>
 
             <li class="nav-item">
-                <a class="nav-link" href="#">
-                    <i class="fas fa-fw fa-tasks"></i><span>Services</span>
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
+                    aria-expanded="true" aria-controls="collapseUtilities">
+                    <i class="fas fa-fw fa-tasks"></i>
+                    <span>Services</span>
                 </a>
+                <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities"
+                    data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <a class="collapse-item" href="{{ route('admin.servicepage.create') }}">Create</a>
+                        <a class="collapse-item" href="{{ route('admin.servicepage.list') }}">List</a>
+                    </div>
+                </div>
             </li>
 
             <li class="nav-item">

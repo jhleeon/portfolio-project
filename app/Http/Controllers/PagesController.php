@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Main;
+use App\Models\Portfolio;
 use App\Models\Service;
 use Illuminate\Http\Request;
 
@@ -15,7 +16,8 @@ class PagesController extends Controller
 
         $main = Main::first();
         $services = Service::all();
-        return view('pages.index',compact('main','services'));
+        $portfolios = Portfolio::all();
+        return view('pages.index',compact('main','services', 'portfolios'));
     }
 
     // Admin Dashboard

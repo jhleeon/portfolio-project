@@ -15,7 +15,7 @@
             <div class="row">
                 <div class="form-group col-md-3 mt-3">
                     <h3>Background Image</h3>
-                    <img style="height: 30vh" class="img-thumbnail" src="{{ url($main->bc_img) }}">
+                    <img style="height: 30vh" class="img-thumbnail" src="{{ url($main->$img) }}">
                     <input class="mt-3" type="file" id="bc_img" name="bc_img">
                 </div>
 

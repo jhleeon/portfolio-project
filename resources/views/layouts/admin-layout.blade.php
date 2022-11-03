@@ -70,9 +70,18 @@
             </li>
 
             <li class="nav-item">
-                <a class="nav-link" href="#">
-                    <i class="fas fa-fw fa-images"></i><span>Portfolio</span>
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#PortfolioCollapseUtilities"
+                    aria-expanded="true" aria-controls="PortfolioCollapseUtilities">
+                    <i class="fas fa-fw fa-tasks"></i>
+                    <span>Portfolio</span>
                 </a>
+                <div id="PortfolioCollapseUtilities" class="collapse" aria-labelledby="headingUtilities"
+                    data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <a class="collapse-item" href="{{ route('admin.portfoliopage.create') }}">Create</a>
+                        <a class="collapse-item" href="{{ route('admin.portfoliopage.list') }}">List</a>
+                    </div>
+                </div>
             </li>
 
             <li class="nav-item">

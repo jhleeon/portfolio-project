@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AboutPageController;
+use App\Http\Controllers\ContactFormController;
 use App\Http\Controllers\PagesController;
 use App\Http\Controllers\MainPageController;
 use App\Http\Controllers\PortfolioPageController;
@@ -20,6 +21,7 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::get('/', [PagesController::class, 'index'])->name('home');
+Route::post('/contact', [ContactFormController::class, 'store'])->name('contact.store');
 
 
 Route::prefix('admin')->group(function () {
@@ -56,6 +58,7 @@ Route::prefix('admin')->group(function () {
      Route::delete('/about/delete/{id}', [AboutPageController::class, 'delete'])->name('admin.aboutpage.delete');
 
 });
+
 
 
 Auth::routes();

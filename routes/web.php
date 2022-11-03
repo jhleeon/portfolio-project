@@ -29,6 +29,9 @@ Route::put('/admin/main', [MainPageController::class,'update'])->name('admin.mai
 Route::get('/admin/service/create', [ServicePageController::class,'create'])->name('admin.servicepage.create');
 Route::post('/admin/service/create', [ServicePageController::class,'store'])->name('admin.servicepage.store');
 Route::get('/admin/service/list', [ServicePageController::class,'list'])->name('admin.servicepage.list');
+Route::get('/admin/service/edit/{id}', [ServicePageController::class,'edit'])->name('admin.servicepage.edit');
+Route::put('/admin/service/update/{id}', [ServicePageController::class,'update'])->name('admin.servicepage.update');
+Route::delete('/admin/service/delete/{id}', [ServicePageController::class,'delete'])->name('admin.servicepage.delete');
 
 Auth::routes();
 

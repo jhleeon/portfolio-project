@@ -27,8 +27,18 @@
                             <tr>
                                 <td>{{ ++$sn }}</td>
                                 <td>{{ $service->title }}</td>
-                                <td>{{ $service->description }}</td>
+                                <td>{{ Str::limit(strip_tags($service->description), 40) }}</td>
                                 <td>{{ $service->icon }}</td>
+
+                                <td><a href="{{ route('admin.servicepage.edit', $service->id) }}"
+                                        class="btn btn-info">Edit</a></td>
+                                <td>
+                                    <form action="{{ route('admin.servicepage.delete', $service->id) }}" method="post">
+                                        @csrf
+                                        @method('DELETE')
+                                        <input type="submit" value="Delete" name="delete" class="btn btn-danger">
+                                    </form>
+                                </td>
                             </tr>
                         @endforeach
                     @endif

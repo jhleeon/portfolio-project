@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\About;
 use App\Models\Main;
 use App\Models\Portfolio;
 use App\Models\Service;
@@ -17,7 +18,8 @@ class PagesController extends Controller
         $main = Main::first();
         $services = Service::all();
         $portfolios = Portfolio::all();
-        return view('pages.index',compact('main','services', 'portfolios'));
+        $abouts = About::all();
+        return view('pages.index',compact('main','services', 'portfolios', 'abouts'));
     }
 
     // Admin Dashboard

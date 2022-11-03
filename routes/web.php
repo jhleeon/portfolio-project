@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AboutPageController;
 use App\Http\Controllers\PagesController;
 use App\Http\Controllers\MainPageController;
 use App\Http\Controllers\PortfolioPageController;
@@ -45,6 +46,15 @@ Route::prefix('admin')->group(function () {
     Route::get('/portfolio/edit/{id}', [PortfolioPageController::class, 'edit'])->name('admin.portfoliopage.edit');
     Route::put('/portfolio/update/{id}', [PortfolioPageController::class, 'update'])->name('admin.portfoliopage.update');
     Route::delete('/portfolio/delete/{id}', [PortfolioPageController::class, 'delete'])->name('admin.portfoliopage.delete');
+
+     //About page route
+     Route::get('/about/create', [AboutPageController::class, 'create'])->name('admin.aboutpage.create');
+     Route::post('/about/create', [AboutPageController::class, 'store'])->name('admin.aboutpage.store');
+     Route::get('/about/list', [AboutPageController::class, 'list'])->name('admin.aboutpage.list');
+     Route::get('/about/edit/{id}', [AboutPageController::class, 'edit'])->name('admin.aboutpage.edit');
+     Route::put('/about/update/{id}', [AboutPageController::class, 'update'])->name('admin.aboutpage.update');
+     Route::delete('/about/delete/{id}', [AboutPageController::class, 'delete'])->name('admin.aboutpage.delete');
+
 });
 
 

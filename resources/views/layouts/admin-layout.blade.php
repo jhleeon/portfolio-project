@@ -83,11 +83,20 @@
                     </div>
                 </div>
             </li>
-
+            
             <li class="nav-item">
-                <a class="nav-link" href="#">
-                    <i class="fas fa-fw fa-user"></i><span>About</span>
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#aboutCollapseUtilities"
+                    aria-expanded="true" aria-controls="aboutCollapseUtilities">
+                    <i class="fas fa-fw fa-users"></i>
+                    <span>About</span>
                 </a>
+                <div id="aboutCollapseUtilities" class="collapse" aria-labelledby="headingUtilities"
+                    data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <a class="collapse-item" href="{{ route('admin.aboutpage.create') }}">Create</a>
+                        <a class="collapse-item" href="{{ route('admin.aboutpage.list') }}">List</a>
+                    </div>
+                </div>
             </li>
 
             <li class="nav-item">

@@ -17,8 +17,8 @@ class MainPageController extends Controller
     public function update(Request $request){
         
         $request->validate([
-            'title' => 'required|string',
-            'sub_title' => 'required|string',
+            'title' => 'required',
+            'sub_title' => 'required',
         ]);
          $main = Main::first();
          $main->title = $request->title;

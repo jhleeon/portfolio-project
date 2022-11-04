@@ -24,7 +24,7 @@ Route::get('/', [PagesController::class, 'index'])->name('home');
 Route::post('/contact', [ContactFormController::class, 'store'])->name('contact.store');
 
 
-Route::prefix('admin')->group(function () {
+Route::middleware(['auth'])->prefix('admin')->group(function () {
 
     // Admin dashbord pafe
     Route::get('/dashboard', [PagesController::class, 'dashboard'])->name('admin.dashboard');

@@ -39,11 +39,13 @@
         </div>
     </nav>
     <!-- Masthead-->
-    <header class="masthead" style=" background-image: url(<?php echo $main->bc_img; ?> )">
+
+    <header class="masthead" style=" background-image: url(<?php echo @$main->bc_img ? url($main->bc_img) : asset('assets/img/header.jpg'); ?>">
         <div class="container">
-            <div class="masthead-subheading">{{ $main->sub_title }}</div>
-            <div class="masthead-heading text-uppercase">{{ $main->title }}</div>
-            <a class="btn btn-primary btn-xl text-uppercase" href="{{ url($main->resume) }}">Resume</a>
+            <div class="masthead-subheading">{{ @$main->sub_title ? $main->sub_title : 'Welcome To Website' }}</div>
+            <div class="masthead-heading text-uppercase">{{ @$main->title ? $main->title : 'Jahedul Hasan' }}</div>
+            <a class="btn btn-primary btn-xl text-uppercase"
+                href="{{ @$main->resume ? url($main->resume) : '#' }}">Resume</a>
         </div>
     </header>
     <!-- Services-->
@@ -204,27 +206,20 @@
                     <div class="col-md-6">
                         <div class="form-group form-group-textarea mb-md-0">
                             <!-- Message input-->
-                            <textarea class="form-control" id="message" placeholder="Your Message *" data-sb-validations="required" name="message"></textarea>
+                            <textarea class="form-control" id="message" placeholder="Your Message *" data-sb-validations="required"
+                                name="message"></textarea>
                             <div class="invalid-feedback" data-sb-feedback="message:required">A message is required.
                             </div>
                         </div>
                     </div>
                 </div>
-                <!-- Submit success message
-               
-                <div class="d-none" id="submitSuccessMessage">
-                    </div>
-                </div>
-                
-               an error submitting the form
-                <div class="d-none" id="submitErrorMessage">
-                    <div class="text-center text-danger mb-3">Error sending message!</div>
-                </div> -->
 
                 <!-- Submit Button-->
                 <div class="text-center">
                     @include('alert.messages')
-                    <button class="btn btn-primary btn-xl text-uppercase" id="submitButton" type="submit">Send Message</button></div>
+                    <button class="btn btn-primary btn-xl text-uppercase" id="submitButton" type="submit">Send
+                        Message</button>
+                </div>
             </form>
         </div>
     </section>
@@ -250,54 +245,56 @@
     </footer>
     <!-- Portfolio Modals-->
     <!-- Portfolio item 1 modal popup-->
-    <div class="portfolio-modal modal fade" id="portfolioModal<?php echo $portfolio->id; ?>" tabindex="-1" role="dialog"
-        aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="close-modal" data-bs-dismiss="modal"><img src="assets/img/close-icon.svg"
-                        alt="Close modal" /></div>
-                <div class="container">
-                    <div class="row justify-content-center">
-                        <div class="col-lg-8">
-                            <div class="modal-body">
-                                <!-- Project details-->
-                                <h2 class="text-uppercase">{{ $portfolio->title }}</h2>
-                                <p class="item-intro text-muted">{{ $portfolio->sub_title }}</p>
-                                <img class="img-fluid d-block mx-auto" src="{{ url($portfolio->big_img) }}"
-                                    alt="..." />
-                                <p>{{ $portfolio->description }}</p>
-                                <ul class="list-inline">
-                                    <li>
-                                        <strong>Date:</strong>
-                                        {{ $portfolio->created_at->toDateString() }}
-                                    </li>
-                                    <li>
-                                        <strong>Client:</strong>
-                                        {{ $portfolio->client }}
-                                    </li>
-                                    <li>
-                                        <strong>Category:</strong>
-                                        {{ $portfolio->category }}
-                                    </li>
-                                </ul>
-                                <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal"
-                                    type="button">
-                                    <i class="fas fa-xmark me-1"></i>
-                                    Close Project
-                                </button>
+    @foreach ($portfolios as $portfolio)
+        <div class="portfolio-modal modal fade" id="portfolioModal<?php echo $portfolio->id; ?>" tabindex="-1" role="dialog"
+            aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="close-modal" data-bs-dismiss="modal"><img src="assets/img/close-icon.svg"
+                            alt="Close modal" /></div>
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-8">
+                                <div class="modal-body">
+                                    <!-- Project details-->
+                                    <h2 class="text-uppercase">{{ $portfolio->title }}</h2>
+                                    <p class="item-intro text-muted">{{ $portfolio->sub_title }}</p>
+                                    <img class="img-fluid d-block mx-auto" src="{{ url($portfolio->big_img) }}"
+                                        alt="..." />
+                                    <p>{{ $portfolio->description }}</p>
+                                    <ul class="list-inline">
+                                        <li>
+                                            <strong>Date:</strong>
+                                            {{ $portfolio->created_at->toDateString() }}
+                                        </li>
+                                        <li>
+                                            <strong>Client:</strong>
+                                            {{ $portfolio->client }}
+                                        </li>
+                                        <li>
+                                            <strong>Category:</strong>
+                                            {{ $portfolio->category }}
+                                        </li>
+                                    </ul>
+                                    <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal"
+                                        type="button">
+                                        <i class="fas fa-xmark me-1"></i>
+                                        Close Project
+                                    </button>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
+    @endforeach
     <!-- Bootstrap core JS-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
     <!-- Core theme JS-->
     <script src="{{ asset('js/scripts.js') }}"></script>
     <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
-                           SB Forms JS                           
+    SB Forms JS
     <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
     <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
 </body>

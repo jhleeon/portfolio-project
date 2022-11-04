@@ -15,7 +15,8 @@
             <div class="row">
                 <div class="form-group col-md-3 mt-3">
                     <h3>Background Image</h3>
-                    <img style="height: 30vh" class="img-thumbnail" src="{{ url($main->bc_img)}}">
+                    <img style="height: 30vh" class="img-thumbnail"
+                        src="{{ @$main->bc_img ? url($main->bc_img) : asset('assets/img/header.jpg') }}">
                     <input class="mt-3" type="file" id="bc_img" name="bc_img">
                 </div>
 
@@ -25,7 +26,7 @@
                             <h4>Title</h4>
                         </label>
                         <input type="text" class="form-control" id="title" name="title"
-                            value="{{ $main->title }}">
+                            value="{{ @$main->title ? $main->title : ' ' }}">
                     </div>
 
                     <div class="mb-5">
@@ -33,7 +34,7 @@
                             <h4>Sub Title</h4>
                         </label>
                         <input type="text" class="form-control" id="sub_title" name="sub_title"
-                            value="{{ $main->sub_title }}">
+                            value="{{ $main->sub_title ? $main->sub_title : ' ' }}">
                     </div>
 
                     <div class="mb-3">

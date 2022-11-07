@@ -87,14 +87,15 @@ class PortfolioPageController extends Controller
         if ($request->file('big_img')) {
 
             $big_file = $request->file('big_img');
-            Storage::putFile('public/img/', $big_file);
+            Storage::putFile('public/img', $big_file);
             $portfolio->big_img = "storage/img/" . $big_file->hashName();
+            
         }
 
         if ($request->file('small_img')) {
 
             $small_file = $request->file('small_img');
-            Storage::putFile('public/img/', $small_file);
+            Storage::putFile('public/img', $small_file);
             $portfolio->small_img = "storage/img/" . $small_file->hashName();
         }
 

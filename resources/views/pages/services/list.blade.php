@@ -19,6 +19,7 @@
                         <th>Title</th>
                         <th>Description</th>
                         <th>icon</th>
+                        <th>Action</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -31,9 +32,9 @@
                                 <td>{{ $service->icon }}</td>
 
                                 <td><a href="{{ route('admin.servicepage.edit', $service->id) }}"
-                                        class="btn btn-info">Edit</a></td>
-                                <td>
-                                    <form action="{{ route('admin.servicepage.delete', $service->id) }}" method="post">
+                                        class="btn btn-info me-2">Edit</a>
+
+                                    <form action="{{ route('admin.servicepage.delete', $service->id) }}" method="post" class="d-inline-block">
                                         @csrf
                                         @method('DELETE')
                                         <input type="submit" value="Delete" name="delete" class="btn btn-danger">

@@ -94,8 +94,8 @@
                 <div id="aboutCollapseUtilities" class="collapse" aria-labelledby="headingUtilities"
                     data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item" href="{{ route('admin.portfoliopage.create') }}">Create</a>
-                        <a class="collapse-item" href="{{ route('admin.portfoliopage.list') }}">List</a>
+                        <a class="collapse-item" href="{{ route('admin.aboutpage.create') }}">Create</a>
+                        <a class="collapse-item" href="{{ route('admin.aboutpage.list') }}">List</a>
                     </div>
                 </div>
             </li>
@@ -194,7 +194,7 @@
             </div>
             <!-- End of Main Content -->
 
-            <!-- Footer -->
+            {{-- <!-- Footer -->
             <footer class="sticky-footer bg-white">
                 <div class="container my-auto">
                     <div class="copyright text-center my-auto">
@@ -202,7 +202,7 @@
                     </div>
                 </div>
             </footer>
-            <!-- End of Footer -->
+            <!-- End of Footer --> --}}
         </div>
         <!-- End of Content Wrapper -->
     </div>

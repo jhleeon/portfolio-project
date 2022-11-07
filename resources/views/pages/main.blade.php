@@ -38,7 +38,7 @@
                     </div>
 
                     <div class="mb-3">
-                        <h4>Upload Resume</h4>
+                        <h4>Upload Hire Us</h4>
                         <input type="file" class="mt-2" id="resume" name="resume">
                     </div>
 

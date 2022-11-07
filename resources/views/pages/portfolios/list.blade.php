@@ -11,8 +11,8 @@
         @php
             $sn = 0;
         @endphp
-        <div class="conatiner col-md-12">
-            <table class="table table-bordered">
+        <div class="conatiner">
+            <table class="table table-bordered table-responsive">
                 <thead>
                     <tr>
                         <th>Serial</th>
@@ -45,10 +45,9 @@
 
                                 <td>
                                     <a href="{{ route('admin.portfoliopage.edit', $portfolio->id) }}" class="btn btn-info"
-                                        class="m-2">Edit
-                                    </a>
+                                        class="m-2">Edit</a>
 
-                                    <form action="{{ route('admin.portfoliopage.delete', $portfolio->id) }}" method="post" class="m-2 d-inline-block">
+                                    <form action="{{ route('admin.portfoliopage.delete', $portfolio->id) }}" method="post" class="d-inline-block m-2">
                                         @csrf
                                         @method('DELETE')
                                         <input type="submit" value="Delete" name="delete" class="btn btn-danger">

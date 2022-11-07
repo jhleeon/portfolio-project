@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta name="description" content="" />
     <meta name="author" content="" />
-    <title>Agency - Start Bootstrap Theme</title>
+    <title>Devmartech</title>
     <!-- Favicon-->
     <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
     <!-- Font Awesome icons (free version)-->
@@ -22,7 +22,7 @@
     <!-- Navigation-->
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
         <div class="container">
-            <a class="navbar-brand" href="#page-top"><img src="assets/img/navbar-logo.svg" alt="..." /></a>
+            {{-- <a class="navbar-brand" href="#page-top"><img src="assets/img/navbar-logo.jpg" alt="..." /></a> --}}
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive"
                 aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                 Menu
@@ -45,7 +45,7 @@
             <div class="masthead-subheading">{{ @$main->sub_title ? $main->sub_title : 'Welcome To Website' }}</div>
             <div class="masthead-heading text-uppercase">{{ @$main->title ? $main->title : 'Jahedul Hasan' }}</div>
             <a class="btn btn-primary btn-xl text-uppercase"
-                href="{{ @$main->resume ? url($main->resume) : '#' }}">Resume</a>
+                href="{{ @$main->resume ? url($main->resume) : '#' }}">Hire Us</a>
         </div>
     </header>
     <!-- Services-->
@@ -147,28 +147,7 @@
         </div>
     </section>
     <!-- Clients-->
-    <div class="py-5">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-md-3 col-sm-6 my-3">
-                    <a href="#!"><img class="img-fluid img-brand d-block mx-auto"
-                            src="assets/img/logos/microsoft.svg" alt="..." aria-label="Microsoft Logo" /></a>
-                </div>
-                <div class="col-md-3 col-sm-6 my-3">
-                    <a href="#!"><img class="img-fluid img-brand d-block mx-auto"
-                            src="assets/img/logos/google.svg" alt="..." aria-label="Google Logo" /></a>
-                </div>
-                <div class="col-md-3 col-sm-6 my-3">
-                    <a href="#!"><img class="img-fluid img-brand d-block mx-auto"
-                            src="assets/img/logos/facebook.svg" alt="..." aria-label="Facebook Logo" /></a>
-                </div>
-                <div class="col-md-3 col-sm-6 my-3">
-                    <a href="#!"><img class="img-fluid img-brand d-block mx-auto" src="assets/img/logos/ibm.svg"
-                            alt="..." aria-label="IBM Logo" /></a>
-                </div>
-            </div>
-        </div>
-    </div>
+
     <!-- Contact-->
     <section class="page-section" id="contact">
         <div class="container">
@@ -229,12 +208,12 @@
             <div class="row align-items-center">
                 <div class="col-lg-4 text-lg-start">Copyright &copy; Your Website 2022</div>
                 <div class="col-lg-4 my-3 my-lg-0">
-                    <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Twitter"><i
-                            class="fab fa-twitter"></i></a>
-                    <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Facebook"><i
-                            class="fab fa-facebook-f"></i></a>
-                    <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="LinkedIn"><i
+                    <a class="btn btn-dark btn-social mx-2" href="https://github.com/jhleeon" aria-label="Github"><i
+                            class="fab fa-github"></i></a>
+                    <a class="btn btn-dark btn-social mx-2" href="https://www.linkedin.com/in/jahedul-hasan-3957a813b/" aria-label="LinkedIn"><i
                             class="fab fa-linkedin-in"></i></a>
+                            <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Facebook"><i
+                                class="fab fa-facebook-f"></i></a>
                 </div>
                 <div class="col-lg-4 text-lg-end">
                     <a class="link-dark text-decoration-none me-3" href="#!">Privacy Policy</a>
